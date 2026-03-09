@@ -1,1 +1,26 @@
+class Solution {
+    func isPalindrome(_ x: Int) -> Bool {
+       
+        var number = x
+        var sum = 0
+        var remainder = 0
 
+        if number < 0 {
+            return false
+        }
+
+        while number != 0 {
+            remainder = number % 10
+            sum = sum * 10 + remainder
+            number = number / 10
+        }
+
+        return x == sum
+    }
+}
+
+let sol = Solution()
+
+print(sol.isPalindrome(121))   // true
+print(sol.isPalindrome(-121))  // false
+print(sol.isPalindrome(10))    // false
